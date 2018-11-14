@@ -67,7 +67,8 @@ def train(**kwargs):
     # step3: criterion and optimizer
     criterion = t.nn.CrossEntropyLoss()
     lr = opt.lr
-    optimizer = model.get_optimizer(lr, opt.weight_decay)
+    # optimizer = model.get_optimizer(lr, opt.weight_decay)
+    optimizer = t.optim.Adam(model.parameters(), lr, weight_decay=opt.weight_decay)
 
     # step4: meters
     loss_meter = meter.AverageValueMeter()
@@ -75,6 +76,7 @@ def train(**kwargs):
     previous_loss = 1e10
 
     # train
+    print(opt.max_epoch)
     for epoch in range(opt.max_epoch):
 
         loss_meter.reset()

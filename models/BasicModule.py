@@ -25,6 +25,6 @@ class BasicModule(t.nn.Module):
         '''
         if name is None:
             prefix = 'checkpoints/' + self.modele_name + '_'
-            name = time.strftime(prefix, '%m%d_%H:%M%s.pth')
+            name = time.strftime(prefix + '%m%d_%H:%M:%S.pth')
         t.save(self.state_dict(), name)
         return name
