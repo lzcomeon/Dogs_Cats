@@ -30,7 +30,6 @@ class DogCat(data.Dataset):
             self.imgs = imgs[:int(0.7 * imgs_num)]
         else:
             self.imgs = imgs[int(0.7 * imgs_num):]
-
         if transforms is None:
             normalize = T.Normalize(mean=[0.485, 0.456, 0.406],
                                     std=[0.229, 0.224, 0.225])
