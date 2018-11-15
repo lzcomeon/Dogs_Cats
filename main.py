@@ -76,7 +76,7 @@ def train(**kwargs):
     previous_loss = 1e10
 
     # train
-    print(opt.max_epoch)
+    # print(opt.max_epoch)
     for epoch in range(opt.max_epoch):
 
         loss_meter.reset()
@@ -85,6 +85,7 @@ def train(**kwargs):
         for ii, (data, label) in tqdm(enumerate(train_dataloader)):
 
             # train model
+            # print(data.size())
             input = data.to(opt.device)
             target = label.to(opt.device)
 

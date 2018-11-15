@@ -65,3 +65,8 @@ class DogCat(data.Dataset):
 
     def __len__(self):
         return len(self.imgs)
+
+if __name__ == '__main__':
+    from config import opt
+    from torch.utils.data import DataLoader
+    train_data = DogCat(opt.train_data_root, train=True)
